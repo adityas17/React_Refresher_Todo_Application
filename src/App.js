@@ -46,7 +46,6 @@ function App() {
 
   return (
       <>
-        <Header />
           <div className="container">
             <h1 className="text-center my-4">Todo List</h1>
             <p className="text-center">Manage your tasks efficiently!</p>
@@ -57,7 +56,6 @@ function App() {
               </div>
             </div>
           </div>
-        <Footer />
     </>
   );
 }
