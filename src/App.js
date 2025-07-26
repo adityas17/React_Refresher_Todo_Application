@@ -23,6 +23,17 @@ function App() {
     localStorage.setItem("todos",JSON.stringify(todos));
   }
 
+  function onUpdate(todo, updatedTodo) {
+    console.log("I am onUpdate of todo", todo, "with updated data", updatedTodo);
+    setTodos(todos.map((e) => {
+      if (e.id === todo.id) {
+        return { ...e, ...updatedTodo };
+      }
+      return e;
+    }));
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+
   function addTodo(title, desc) {
     console.log("I am adding this todo", title, desc);
     let sno;
@@ -52,7 +63,7 @@ function App() {
             <AddTodos addTodo={addTodo} />
             <div className="row">
               <div className="col-md-8 offset-md-2">
-                <Todos todos={todos} onDelete={onDelete} />
+                <Todos todos={todos} onDelete={onDelete} onUpdate = {onUpdate} />
               </div>
             </div>
           </div>

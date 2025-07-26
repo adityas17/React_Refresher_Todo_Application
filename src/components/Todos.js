@@ -6,7 +6,7 @@ export function Todos(props) {
     <div>
       {props.todos.length === 0 ? "No Todos to display" :
         props.todos.map((todo) => {
-          return (<TodoItem todo={todo} onDelete={props.onDelete} />)
+          return (<TodoItem todo={todo} onDelete={props.onDelete} onUpdate = {props.onUpdate} />)
         })
       }
     </div>
